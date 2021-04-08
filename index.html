@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Infini-bot</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script>"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <script type="text/Javascript" src="projs.js"></script>
+    </head>
+    <body>
+        <h1>Infini Bot Working</h1>
+            <div class="chat-popup" id="chat-popup">
+                <div class="options options-container">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul class="options-popup">
+                    <li>
+                        <span class="options-label">Contact</span>
+                        <div class="options-container" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=research@sakec.ac.in')">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="options-label">Downloads</span>
+                        <div class="options-container" onclick="download()">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="options-label">Live Chat</span>
+                        <div class="options-container">
+                            <button type="button" class=" btn fa fa-comment" title="Hit me up!" onclick="openbox()"></button> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chatbox" id="chat-container" style="display: none;">
+                <div class="chat-header">
+                    <span class="logo" style="color:#ffffff;"><i class="fa fa-anchor"></i></span>
+                    <span class="heading"><h3>Infini</h3></span>
+                    <span class="close" style="color:#ffffff !important;" onclick="closebox()"><i class="fa fa-times"></i></span>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-logs">
+                        <div class="chat-messages">
+    
+                        </div>
+                        <!------------------chat-log ------------->
+                    </div>
+                    <div class="chat-scrollbar">
+                        <!-----------------scroll bar------------->
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <form id="chat-form">
+                        <textarea id="text-input" class="text-area" placeholder="Whats up ?" name="input-message"  cols="60" maxlength="60" required></textarea>
+                        <button type="submit" class="chat-submit-mic" id="chat-mic"><i class="fa fa-microphone"></i></button>
+                        <button type="submit" class="chat-submit-btn" id="chat-submit"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <script>
+                function openbox(){
+                    document.getElementById('chat-container').style.display='block';
+                    // Try to Add Transition property here to make it pop up smoothly
+                    document.getElementById('chat-popup').style.display='none';
+                }
+                function closebox(){
+                    document.getElementById('chat-container').style.display='none';
+                    // Try to Add Transition property here to make it close smoothly
+                    document.getElementById('chat-popup').style.display='block';
+                }
+                function download(){
+                    let option = window.prompt("Specify the option number : 1.Project 2.Events 3.MOUS 4.Grants 5.Achievements");
+                    switch(option){
+                        case "1" : 
+                            let year = window.prompt("Specify the year : 1.2018 2.2019 3.2020");
+                            switch(year){
+                                case "1" : window.open("https://shahandanchor.com/research/index.php/Ctrl_projects/downloadExcel/2018-19","_self");
+                                break;
+                                case "2" : window.open("https://shahandanchor.com/research/index.php/Ctrl_projects/downloadExcel/2019-20","_self");
+                                break;
+                                case "3" : window.open("https://shahandanchor.com/research/index.php/Ctrl_projects/downloadExcel/2020-21","_self");
+                                break;
+                            }
+                        break;
+                        case "2" : window.open("https://shahandanchor.com/research/index.php/Ctrl_twork/downloadEvents/","_self");
+                        break;
+                        case "3" : window.opem("https://shahandanchor.com/research/index.php/Ctrl_twork/downloadMous/","_self");
+                        break;
+                        case "4" : window.open("https://shahandanchor.com/research/illustrations/grants/Grants.xlsx","_self");
+                        break;
+                        case "5" : window.open("https://shahandanchor.com/research/dist/images/testimonials/achivements.xlsx","_self");
+                        break;    
+                    }
+                }         
+            </script>
+    </body>
+</html>
